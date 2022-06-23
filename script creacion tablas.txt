@@ -1,0 +1,79 @@
+USE [RealityFirst]
+GO
+
+/****** Objeto: Table [dbo].[ticket] Fecha del script: 23-06-2022 16:50:32 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ticket] (
+    [Idticket]  INT          NOT NULL,
+    [tipo]      VARCHAR (50) NOT NULL,
+    [Espacio]   VARCHAR (50) NOT NULL,
+    [precio]    INT          NOT NULL,
+    [idArtista] INT          NOT NULL
+);
+
+
+USE [RealityFirst]
+GO
+
+/****** Objeto: Table [dbo].[noticia] Fecha del script: 23-06-2022 16:49:38 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[noticia] (
+    [IdNoticia]         INT          NOT NULL,
+    [titulo]            VARCHAR (50) NOT NULL,
+    [Sub titulo]        VARCHAR (50) NOT NULL,
+    [Autor]             VARCHAR (50) NOT NULL,
+    [fecha_publicacion] VARCHAR (50) NOT NULL,
+    [noticia]           VARCHAR (50) NOT NULL,
+    [idArtista]         INT          NOT NULL
+);
+
+
+USE [RealityFirst]
+GO
+
+/****** Objeto: Table [dbo].[artista] Fecha del script: 23-06-2022 16:49:13 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[artista] (
+    [IdArtista]        INT          NOT NULL,
+    [Artista]          VARCHAR (50) NOT NULL,
+    [lugar_nacimiento] VARCHAR (50) NOT NULL,
+    [fechaNac]         VARCHAR (50) NOT NULL,
+    [edad]             INT          NOT NULL,
+    [genero]           VARCHAR (50) NOT NULL
+);
+
+USE [RealityFirst]
+GO
+
+/****** Objeto: Table [dbo].[Evento] Fecha del script: 23-06-2022 16:52:41 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Evento] (
+    [IdEvento]    INT          NOT NULL,
+    [evento]      VARCHAR (50) NOT NULL,
+    [lugar]       VARCHAR (50) NOT NULL,
+    [fechaEvento] VARCHAR (50) NOT NULL,
+    [idArtista]   INT          NOT NULL,
+    [tipoEvento]  VARCHAR (50) NOT NULL
+);
+
+
