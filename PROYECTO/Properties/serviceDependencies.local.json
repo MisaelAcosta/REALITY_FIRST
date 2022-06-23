@@ -1,3 +1,13 @@
 {
-  "dependencies": {}
+  "dependencies": {
+    "secrets1": {
+      "type": "secrets.user"
+    },
+    "mssql1": {
+      "secretStore": "LocalSecretsFile",
+      "type": "mssql.local",
+      "connectionId": "ConnectionStrings:Server=tcp:entregafinal.database.windows.net,1433;InitialCatalog=DBDReality_first;PersistSecurityInfo=False;UserID=nicolas;Password={Caos.9000};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;ConnectionTimeout=30;",
+      "dynamicId": null
+    }
+  }
 }
