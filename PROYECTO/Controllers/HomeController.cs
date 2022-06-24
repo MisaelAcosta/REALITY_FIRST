@@ -2,7 +2,7 @@
 using PROYECTO.Models;
 using System.Diagnostics;
 
-namespace PROYECTO.Controllers
+namespace Pruebas.Controllers
 {
     public class HomeController : Controller
     {
@@ -18,13 +18,23 @@ namespace PROYECTO.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Noticias()
+        {
+            return View();
+        }
+        public IActionResult Ingresar()
         {
             return View();
         }
 
-
-
+        public IActionResult Contacto()
+        {
+            return View();
+        }
+        public IActionResult Entradas()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -1,6 +1,146 @@
-﻿namespace PROYECTO.Views.Home
-{
-    public class Index
-    {
-    }
-}
+﻿
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <img />
+</div>
+<section>
+        <div class="circle"></div>
+        
+        <div class="content">
+          <div class="textBox">
+            <h2>SOMOS<br>  <span>REALITY FIRST</span></h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis possimus molestiae, tempore repellendus nulla reiciendis hic quia architecto quibusdam iure at ipsum id! Molestias, dolor non temporibus impedit repellendus harum.</p>
+            <a href="#">CONOCE MAS...</a>
+          </div>
+          <div class="imgBox">
+            <img src="multimedia/img1.png" class="Starbucks">
+          </div>
+        </div>
+        <ul class="thumb">
+          <li><img src="multimedia/thumb1.png" onclick="imgSlider('multimedia/img1.png');changeCircleColor('#00b7a4')"></li>
+          <li><img src="multimedia/thumb2.png" onclick="imgSlider('multimedia/img2.png');changeCircleColor('#9a001c')"></li>
+          <li><img src="multimedia/thumb3.png" onclick="imgSlider('multimedia/img3.png');changeCircleColor('#fcbf42')"></li>
+        </ul>
+        <ul class="sci">
+          <li><a href="#"><img src="multimedia/facebook1.png"></a></li>
+          <li><a href="#"><img src="multimedia/twitter.png"></a></li>
+          <li><a href="#"><img src="multimedia/instagram.png"></a></li>
+        </ul>
+      </section>
+      <div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <!-- GENEROS -->
+    <section class="about-us">
+      <div class="contenedor1">
+          <h2 class="titulo">NUESTROS GENEROS</h2>
+          <div class="contenedor-articulo">
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+              <button type="button" class="btn btn-danger">ROCK</button>
+              <button type="button" class="btn btn-warning">URBANO</button>
+              <button type="button" class="btn btn-success">POP</button>
+            </div>
+            </div>
+      </div>
+  </section>
+  <!-- carusel mini EVENTOS -->
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <h1>NUEVOS EVENTOS</h1>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="cards-wrapper">
+          <div class="card">
+            <img src="multimedia/ariel-szanto-aqA82Kt_bsE-unsplash.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">ULTRA</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">COMPRAR ENTRADAS</a>
+            </div>
+          </div>
+          <div class="card d-none d-md-block">
+            <img src="multimedia/bring-me-the-horizon-2021-696x479.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">BRING ME THE HORIZON</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">COMPRAR ENTRADAS</a>
+            </div>
+          </div>
+          <div class="card d-none d-md-block">
+            <img src="multimedia/Joyeux-40e-anniversaire-deadmau5-celebrez-avec-5-de-ses-titres.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">DEAD MAUS</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">COMPRAR ENTRADAS</a>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="carousel-item">
+          <div class="cards-wrapper">
+            <div class="card">
+              <img src="multimedia/277781235-320650273385220-8321478473860314554-n_39744491_20220401152330.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">RED HOT CHILI PEPPERS</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">COMPRAR ENTRADAS</a>
+              </div>
+            </div>
+            <div class="card d-none d-md-block">
+              <img src="multimedia/foto_de_john-mayer-1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">JOHN MAYER</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">COMPRAR ENTRADAS</a>
+              </div>
+            </div>
+            <div class="card d-none d-md-block">
+              <img src="multimedia/T7IQHJFVTVFTFJYOTEOGPC7NFE.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">CHAVO OF THE 8 </h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">COMPRAR ENTRADAS</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    </div/>
+    <section class="about-area">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-6 col-md-12">
+              <div class="about-image">
+                  <img src="multimedia/col.png" alt="About us" class="img-fluid">
+              </div>
+          </div>
+          <div class="col-lg-6 col-md-12 about-title">
+            <h6 class="noticias"></h6>
+              <h2 class="text-uppercase pt-5">
+                  <span></span>
+                  <span>COLDPLAY</span>
+                  <span></span>
+              </h2>
+              <div class="paragraph py-4 w-75">
+                  <p class="para">
+                      23 DE JUNIO 2022 | ESTADIO NACIONAL  
+                  </p>
+                  <p class="parrafo">
+                    Debido a la gran demanda de tickets, Coldplay anunció este lunes una nueva fecha para su concierto en Chile, en el marco de su gira mundial "Music Of The Spheres World Tour".
+                  </p>
+              </div>
+              <button type="button" class="btn btn-warning">SABER MAS...</button>
+          </div>
+      </div>
+  </div>
+</section>
+<a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
