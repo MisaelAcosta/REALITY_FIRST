@@ -11,14 +11,14 @@
 </head>
 <body>
     <header>
-        <a href="#" ><img src="multimedia/logo_transparent.png" class="logo"></a>
+        <a href="#" ><img src="../multimedia/logo_transparent.png" class="logo"></a>
         <div class="toggle" onclick="toggleMenu();"></div>
         <ul class="navigation">
             <li><a asp-area="" asp-controller="Home" asp-action="Index">INICIO</a></li>
             <li><a asp-area="" asp-controller="Home" asp-action="Entradas">ENTRADAS</a></li>
             <li><a asp-area="" asp-controller="Home" asp-action="Noticias">NOTICIAS</a></li>
             <li><a asp-area="" asp-controller="Home" asp-action="Artistas">ARTISTAS</a></li> 
-            <li><<a asp-area="" asp-controller="Home" asp-action="Contacto">CONTACTO</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Contacto">CONTACTO</a></li>
             <li><a asp-area="" asp-controller="Home" asp-action="Ingresar">INGRESAR</a></li>
           </ul>
     </header>
@@ -33,6 +33,38 @@
             &copy; 2022 - Pruebas - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
+    </script>
+<script type="text/javascript">
+  function imgSlider(anything){
+    document.querySelector('.Starbucks').src = anything; 
+  }
+  function changeCircleColor(color){
+    const circle = document.querySelector('.circle');
+    circle.style.background = color;
+  }
+
+  function toggleMenu(){
+    var menutoggle = document.querySelector('.toggle');
+    var navigation = document.querySelector('.navigation')
+    menutoggle.classList.toggle('active')
+    navigation.classList.toggle('active')
+  }
+</script>
+<script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
+<script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="main.js"></script>
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+     
+     <script>
+      $('.carousel').carousel();
+
+      
+  </script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
