@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PROYECTO.Models;
+using PROYECTO.Servico;
 using System.Diagnostics;
 
 namespace PROYECTO.Controllers
@@ -7,18 +8,20 @@ namespace PROYECTO.Controllers
     public class RealityFirstController : Controller
     {
         IConfiguration config;
+        RealityServicio app;
         
 
         public RealityFirstController(IConfiguration config)
         {
             this.config = config;
-            string ConnectionString = config.GetConnectionString("dbRealityFirst");
-            
+            string ConnectionString = config.GetConnectionString("RealityFirst");
 
+            app = new RealityServicio(ConnectionString);
         }
 
         public IActionResult Entradas()
         {
+
             return View();
         }
         public IActionResult Contacto()
@@ -27,11 +30,14 @@ namespace PROYECTO.Controllers
         }
         public IActionResult Noticias()
         {
-            return View();
+            IList<RealityFirst> listaNoticia = app.GetAllNoticia();
+            return View(listaNoticia);
         }
         public IActionResult Artistas()
         {
-            return View();
+            IList<RealityFirst> listaArtista = app.GetAll();    
+
+            return View("Artistas",listaArtista);
         }
 
         public IActionResult Ingresar()

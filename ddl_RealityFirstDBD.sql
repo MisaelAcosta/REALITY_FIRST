@@ -123,3 +123,5 @@ Insert into ticket (IdTicket,tipo,espacio,precio,idArtista)values(21,'platea  al
 Insert into ticket (IdTicket,tipo,espacio,precio,idArtista)values(22,'platea  baja','estadio',50000,6);
 Insert into ticket (IdTicket,tipo,espacio,precio,idArtista)values(23,'cancha general','estadio',50000,6);
 Insert into ticket (IdTicket,tipo,espacio,precio,idArtista)values(24,'vip','estadio',50000,6);
+
+
