@@ -1,12 +1,4 @@
-﻿@model Ilist<RealityFirst>
-@{
-
-}
-@foreach (RealityFirst noticia in Model)
-{
-    
-
-<div class="Noticias">
+﻿<div class="Noticias">
     <h1>BIENVENIDO</h1>
 </div>
 
@@ -18,10 +10,10 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">@noticia.titulo</h5>
-          <p class="card-text">@noticia.noticia 
-              <br> Fecha: @noticia.fechaEvento
-              <br> Lugar: @noticia.lugar <br>
+          <h5 class="card-title">titulo</h5>
+          <p class="card-text">noticia 
+              <br> Fecha: fechaEvento
+              <br> Lugar: lugar <br>
               ¡Te esperamos!
           </p>
           <a href="../Views/Home/Entradas.cshtml" class="btn btn-primary">Comprar entradas</a>
@@ -30,7 +22,7 @@
       </div>
     </div>
   </div>
-  @*<div class="card mb-3" style="max-width: 540px;">
+  <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
         <img src="../wwwroot/multimedia/mt.jpg" width="500" class="img-fluid rounded-start" alt="...">
@@ -70,7 +62,7 @@
   <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="../wwwroot/multimedia/pt.jpg" width="500" class="img-fluid rounded-start" alt="...">
+        <img src="/multimedia/pt.jpg" width="500" class="img-fluid rounded-start" alt="...">
       </div>
       <div class="col-md-8">
         <div class="card-body">
@@ -85,6 +77,6 @@
         </div>
       </div>
     </div>
-  </div>*@
+  </div>
 </div>
 }
