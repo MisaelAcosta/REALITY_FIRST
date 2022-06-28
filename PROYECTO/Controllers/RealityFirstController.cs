@@ -12,7 +12,7 @@ namespace PROYECTO.Controllers
         public RealityFirstController(IConfiguration config)
         {
             this.config = config;
-            string ConnectionString = config.GetConnectionString("dbRealityFirst");
+            string ConnectionString = config.GetConnectionString("RealityFirst");
             
 
         }
