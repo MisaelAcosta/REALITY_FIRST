@@ -29,7 +29,7 @@ namespace PROYECTO.Servico
             {
                 server.Open();
 
-                string query = string.Format("Select * from Arista;");
+                string query = string.Format("Select * from Artista;");
                 using (SqlCommand cmd = new SqlCommand(query, server)) 
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -82,8 +82,181 @@ namespace PROYECTO.Servico
             return listaArtista;
         }
 
-       
+        public RealityFirst GetEvento(int id)
+        {
+            RealityFirst RFirstEvento = new RealityFirst();
+            using (SqlConnection server = new SqlConnection(Connection))
+            {
+                server.Open();
 
+                string query = string.Format("Select * from Evento;");
+                using (SqlCommand cmd = new SqlCommand(query, server))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                        while (reader.Read())
+                        {
+                            RFirstEvento = new RealityFirst()
+                            {
+                                IdEvento = reader.GetInt32(0),
+                                Evento = reader.GetString(1),
+                                lugar=reader.GetString(2),
+                                fechaEvento = reader.GetString(3),
+                                IdArtista = reader.GetInt32(4),
+                                tipoEvento = reader.GetString(5)
+                            };
+                        }
+                }
+                server.Close();
+            }
+            return RFirstEvento;
+
+
+        }
+        public IList<RealityFirst> GetAllEvento()
+        {
+            IList<RealityFirst> listaEvento = new List<RealityFirst>();
+            using (SqlConnection server = new SqlConnection(Connection))
+            {
+                server.Open();
+                string query = string.Format("select * from evento;");
+                using (SqlCommand cmd = new SqlCommand(query, server))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        listaEvento.Add(new RealityFirst()
+                        {
+                            IdEvento = reader.GetInt32(0),
+                            Evento = reader.GetString(1),
+                            lugar = reader.GetString(2),
+                            fechaEvento = reader.GetString(3),
+                            IdArtista=reader.GetInt32(4),
+                            tipoEvento = reader.GetString(5)
+                        });
+                    }
+                }
+                server.Close();
+
+            }
+
+            return listaEvento;
+        }
+
+        public RealityFirst GetNoticia(int id)
+        {
+            RealityFirst RFirstNoticia = new RealityFirst();
+            using (SqlConnection server = new SqlConnection(Connection))
+            {
+                server.Open();
+
+                string query = string.Format("Select * from Evento;");
+                using (SqlCommand cmd = new SqlCommand(query, server))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                        while (reader.Read())
+                        {
+                            RFirstNoticia = new RealityFirst()
+                            {
+                                IdNoticia = reader.GetInt32(0),
+                                titulo= reader.GetString(1),
+                                subTitulo= reader.GetString(2),
+                                autor= reader.GetString(3),
+                                fechaPublicacion= reader.GetString(4),
+                                noticia=reader.GetString(5),
+                                IdArtista=reader.GetInt32(6)
+                            };
+                        }
+                }
+                server.Close();
+            }
+            return RFirstNoticia;
+
+
+        }
+        public IList<RealityFirst> GetAllNoticia()
+        {
+            IList<RealityFirst> listaNoticia = new List<RealityFirst>();
+            using (SqlConnection server = new SqlConnection(Connection))
+            {
+                server.Open();
+                string query = string.Format("select * from evento;");
+                using (SqlCommand cmd = new SqlCommand(query, server))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        listaNoticia.Add(new RealityFirst()
+                        {
+                            IdNoticia = reader.GetInt32(0),
+                            titulo = reader.GetString(1),
+                            subTitulo = reader.GetString(2),
+                            autor = reader.GetString(3),
+                            fechaPublicacion = reader.GetString(4),
+                            noticia = reader.GetString(5),
+                            IdArtista = reader.GetInt32(6)
+                        });
+                    }
+                }
+                server.Close();
+
+            }
+
+            return listaNoticia;
+        }
+        public RealityFirst GetTicket(int id)
+        {
+            RealityFirst RFirstTicket = new RealityFirst();
+            using (SqlConnection server = new SqlConnection(Connection))
+            {
+                server.Open();
+
+                string query = string.Format("Select * from Ticket;");
+                using (SqlCommand cmd = new SqlCommand(query, server))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                        while (reader.Read())
+                        {
+                            RFirstTicket = new RealityFirst()
+                            {
+                                Idticket = reader.GetInt32(0),
+                                tipo= reader.GetString(1),
+                                espacio = reader.GetString(2),
+                                precio=reader.GetInt32(3),
+                                IdArtista= reader.GetInt32(4)
+                            };
+                        }
+                }
+                server.Close();
+            }
+            return RFirstTicket;
+
+
+        }
+        public IList<RealityFirst> GetAllTicket()
+        {
+            IList<RealityFirst> listaTicket = new List<RealityFirst>();
+            using (SqlConnection server = new SqlConnection(Connection))
+            {
+                server.Open();
+                string query = string.Format("select * from evento;");
+                using (SqlCommand cmd = new SqlCommand(query, server))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        listaTicket.Add(new RealityFirst()
+                        {
+                            Idticket = reader.GetInt32(0),
+                            tipo = reader.GetString(1),
+                            espacio = reader.GetString(2),
+                            precio = reader.GetInt32(3),
+                            IdArtista = reader.GetInt32(4)
+                        });
+                    }
+                }
+                server.Close();
+
+            }
+
+            return listaTicket;
+        }
         public void Update(RealityFirst obj)
         {
             
