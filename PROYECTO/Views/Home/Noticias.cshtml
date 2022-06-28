@@ -1,4 +1,10 @@
-﻿
+﻿model Ilist<RealityFirst>
+@{
+
+}
+@foreach (RealityFirst noticia in Model)
+{
+    
 
 <div class="Noticias">
     <h1>BIENVENIDO</h1>
@@ -12,10 +18,10 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">titulo</h5>
-          <p class="card-text">noticia 
-              <br> Fecha: fechaEvento
-              <br> Lugar: lugar <br>
+          <h5 class="card-title">@noticia.titulo</h5>
+          <p class="card-text">@noticia.noticia 
+              <br> Fecha: @noticia.fechaEvento
+              <br> Lugar: @noticia.lugar <br>
               ¡Te esperamos!
           </p>
           <a href="../Views/Home/Entradas.cshtml" class="btn btn-primary">Comprar entradas</a>
@@ -24,7 +30,7 @@
       </div>
     </div>
   </div>
-  <div class="card mb-3" style="max-width: 540px;">
+  @*<div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
         <img src="/multimedia/mt.jpg" width="500" class="img-fluid rounded-start" alt="...">
@@ -79,6 +85,8 @@
         </div>
       </div>
     </div>
+  </div>*@
+
   </div>
-</div>
+
 }
