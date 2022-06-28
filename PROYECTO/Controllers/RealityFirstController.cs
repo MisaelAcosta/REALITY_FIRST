@@ -21,6 +21,7 @@ namespace PROYECTO.Controllers
 
         public IActionResult Entradas()
         {
+
             return View();
         }
         public IActionResult Contacto()
@@ -29,11 +30,14 @@ namespace PROYECTO.Controllers
         }
         public IActionResult Noticias()
         {
-            return View();
+            IList<RealityFirst> listaNoticia = app.GetAllNoticia();
+            return View(listaNoticia);
         }
         public IActionResult Artistas()
         {
-            return View();
+            IList<RealityFirst> listaArtista = app.GetAll();    
+
+            return View("Artistas",listaArtista);
         }
 
         public IActionResult Ingresar()

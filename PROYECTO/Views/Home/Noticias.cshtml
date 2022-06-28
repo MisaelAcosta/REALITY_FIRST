@@ -1,4 +1,11 @@
-﻿
+﻿@model Ilist<RealityFirst>
+@{
+
+}
+@foreach (RealityFirst noticia in Model)
+{
+    
+
 <div class="Noticias">
     <h1>BIENVENIDO</h1>
 </div>
@@ -11,10 +18,10 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">HALLOWEEN</h5>
-          <p class="card-text">Helloween presenta “United Forces Tour 2022”, ven a disfrutar del mejor show en vivo con nosotros.
-              <br> Fecha: 04 de Octubre de 2022.
-              <br> Lugar: Movistar Arena <br>
+          <h5 class="card-title">@noticia.titulo</h5>
+          <p class="card-text">@noticia.noticia 
+              <br> Fecha: @noticia.fechaEvento
+              <br> Lugar: @noticia.lugar <br>
               ¡Te esperamos!
           </p>
           <a href="../Views/Home/Entradas.cshtml" class="btn btn-primary">Comprar entradas</a>
@@ -23,7 +30,7 @@
       </div>
     </div>
   </div>
-  <div class="card mb-3" style="max-width: 540px;">
+  @*<div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
         <img src="../wwwroot/multimedia/mt.jpg" width="500" class="img-fluid rounded-start" alt="...">
@@ -78,5 +85,6 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>*@
 </div>
+}
