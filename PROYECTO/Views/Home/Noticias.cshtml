@@ -1,10 +1,4 @@
-﻿model Ilist<RealityFirst>
-@{
-
-}
-@foreach (RealityFirst noticia in Model)
-{
-    
+﻿
 
 <div class="Noticias">
     <h1>BIENVENIDO</h1>
@@ -14,23 +8,23 @@
   <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="/multimedia/halloween.jpg" width="500" class="img-fluid rounded-start" alt="...">
+        <img src="/multimedia/halloween.jpg" width="600" class="card-img-top" alt="...">
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">@noticia.titulo</h5>
-          <p class="card-text">@noticia.noticia 
-              <br> Fecha: @noticia.fechaEvento
-              <br> Lugar: @noticia.lugar <br>
+          <h5 class="card-title">HELLOWEEN</h5>
+          <p class="card-text">  ¡Helloween regresa a Chile junto a Hammerfall! Porque el público así lo pidió, Helloween, una de las agrupaciones más trascendentales de la música a nivel mundial, regresa al país para presentar su “United Forces Tour 2022”
+              <br> Fecha: 22 de Octubre de 2022
+              <br> Lugar: Estadio nacional <br>
               ¡Te esperamos!
           </p>
-          <a href="../Views/Home/Entradas.cshtml" class="btn btn-primary">Comprar entradas</a>
+          <a href="Entradas.cshtml" class="btn btn-primary">Comprar entradas</a>
 
         </div>
       </div>
     </div>
   </div>
-  @*<div class="card mb-3" style="max-width: 540px;">
+  <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
         <img src="/multimedia/mt.jpg" width="500" class="img-fluid rounded-start" alt="...">
@@ -40,7 +34,7 @@
           <h5 class="card-title">MYKE TOWERS</h5>
           <p class="card-text" >Nominado en la categoría Artista del Año de los Latin American Music Awards 2022.
               No te pierdas al imperdible Myke Towers en concierto.
-              <br>Fecha: 23 de Septiembre de 20200. 
+              <br>Fecha: 23 de Septiembre de 2022. 
               <br>Lugar: Movistar Arena <br>
               ¡Te esperamos!
               </p>
@@ -85,8 +79,6 @@
         </div>
       </div>
     </div>
-  </div>*@
-
   </div>
 
-}
+  </div>
