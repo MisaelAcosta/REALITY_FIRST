@@ -1,6 +1,6 @@
 ﻿namespace PROYECTO.Models
 {
-    public class modeloNoticia
+    public class ModeloNoticia
     {
         private int idNoticia;
         private string titulo;
@@ -15,9 +15,10 @@
         public string Autor { get => autor; set => autor = value; }
         public string FechaPublicacion { get => fechaPublicacion; set => fechaPublicacion = value; }
         public string Noticia { get => noticia; set => noticia = value; }
-        public modeloNoticia()
-        {
 
+
+        public ModeloNoticia()
+        {
         }
     }
 }

@@ -10,14 +10,19 @@ namespace PROYECTO.Controllers
         IConfiguration config;
         ArtistaServicio app;
         NoticiaServicio NS;
-        
+        EventoServicio ES;
 
+
+#pragma warning disable CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
         public RealityFirstController(IConfiguration config)
+#pragma warning restore CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
         {
             this.config = config;
             string ConnectionString = config.GetConnectionString("DBDRealityFirst");
 
             app = new ArtistaServicio(ConnectionString);
+            NS = new NoticiaServicio(ConnectionString);
+            ES = new EventoServicio(ConnectionString);
         }
 
         public IActionResult Entradas()
@@ -25,20 +30,21 @@ namespace PROYECTO.Controllers
 
             return View();
         }
-        public IActionResult PruebasAntesDe(int id)
+        public IActionResult PruebasAntesDe()
         {
-            ModeloArtista obj = app.GetArtista(id);
+            IList<ModeloArtista> ListaArtista = app.GetAll();
 
-            return View("Artistas", obj);
+            return View("Pruebas", ListaArtista);
         }
         public IActionResult Contacto()
         {
             return View();
         }
-        public IActionResult Noticias(int id)
+        public IActionResult Noticias()
         {
-            modeloNoticia obj = NS.Get(id);
-            return View("Noticias",obj);
+
+           IList<ModeloNoticia> ListaNoticia = NS.GetAll();
+            return View("Noticias", ListaNoticia);
         }
         public IActionResult Artistas()
         {

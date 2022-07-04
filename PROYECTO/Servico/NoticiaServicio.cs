@@ -6,7 +6,7 @@ using PROYECTO.Servico.Contrato;
 
 namespace PROYECTO.Servico
 {
-    public class NoticiaServicio : IServicio<modeloNoticia>
+    public class NoticiaServicio : IServicio<ModeloNoticia>
     {
         private string Connection;
 
@@ -15,13 +15,13 @@ namespace PROYECTO.Servico
             this.Connection = ConnectionString;
         }
 
-        public void  Create(modeloNoticia obj)
+        public void  Create(ModeloNoticia obj)
         {
-            modeloNoticia MNoticia = new modeloNoticia();
+            ModeloNoticia MNoticia = new ModeloNoticia();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
-                string query = string.Format("insert into dbo.notcia values("+obj.IdNoticia+",'"
+                string query = string.Format("insert into dbo.noticia values("+obj.IdNoticia+",'"
                                              +obj.Titulo+"','"+obj.SubTitulo+"','"+obj.Autor+"','"
                                              +obj.FechaPublicacion+"','"+obj.Noticia+"');");
                 using(SqlCommand cmd = new SqlCommand(query, server))
@@ -30,7 +30,7 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            MNoticia = new modeloNoticia()
+                            MNoticia = new ModeloNoticia()
                             {
                                 IdNoticia = reader.GetInt32(0),
                                 Titulo = reader.GetString(1),
@@ -48,7 +48,7 @@ namespace PROYECTO.Servico
 
        public  void  Delete(int id)
         {
-            modeloNoticia MNoticia = new modeloNoticia();
+            ModeloNoticia MNoticia = new ModeloNoticia();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -59,7 +59,7 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            MNoticia = new modeloNoticia()
+                            MNoticia = new ModeloNoticia()
                             {
                                 IdNoticia = reader.GetInt32(0),
                                 Titulo = reader.GetString(1),
@@ -76,9 +76,9 @@ namespace PROYECTO.Servico
         }
     
 
-        public modeloNoticia Get(int id)
+        public ModeloNoticia Get(int id)
         {
-            modeloNoticia MNoticia = new modeloNoticia();
+            ModeloNoticia MNoticia = new ModeloNoticia();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -89,7 +89,7 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            MNoticia = new modeloNoticia()
+                            MNoticia = new ModeloNoticia()
                             {
                                 IdNoticia = reader.GetInt32(0),
                                 Titulo = reader.GetString(1),
@@ -107,9 +107,9 @@ namespace PROYECTO.Servico
         }
     
 
-        public IList<modeloNoticia> GetAll()
+        public IList<ModeloNoticia> GetAll()
         {
-            IList<modeloNoticia> listaNoticia = new List<modeloNoticia>();
+            IList<ModeloNoticia> listaNoticia = new List<ModeloNoticia>();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -120,7 +120,7 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            listaNoticia.Add(new modeloNoticia()
+                            listaNoticia.Add(new ModeloNoticia()
                             {
                                 IdNoticia = reader.GetInt32(0),
                                 Titulo = reader.GetString(1),
@@ -138,9 +138,9 @@ namespace PROYECTO.Servico
         }
     
 
-        public void  Update(modeloNoticia obj)
+        public void  Update(ModeloNoticia obj)
         {
-            modeloNoticia MNoticia = new modeloNoticia();
+            ModeloNoticia MNoticia = new ModeloNoticia();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -151,7 +151,7 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            MNoticia = new modeloNoticia()
+                            MNoticia = new ModeloNoticia()
                             {
                                 IdNoticia = reader.GetInt32(0),
                                 Titulo = reader.GetString(1),
