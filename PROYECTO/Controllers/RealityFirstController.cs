@@ -9,6 +9,7 @@ namespace PROYECTO.Controllers
     {
         IConfiguration config;
         ArtistaServicio app;
+        NoticiaServicio NS;
         
 
         public RealityFirstController(IConfiguration config)
@@ -34,10 +35,10 @@ namespace PROYECTO.Controllers
         {
             return View();
         }
-        public IActionResult Noticias()
+        public IActionResult Noticias(int id)
         {
-            
-            return View();
+            modeloNoticia obj = NS.Get(id);
+            return View("Noticias",obj);
         }
         public IActionResult Artistas()
         {
