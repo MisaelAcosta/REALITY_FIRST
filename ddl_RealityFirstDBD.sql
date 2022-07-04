@@ -1,4 +1,18 @@
 
+USE [RealityFirst]
+GO
+
+/****** Objeto: Table [dbo].[ticket] Fecha del script: 28-06-2022 11:35:19 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+DROP TABLE [dbo].[ticket];
+
+
+GO
 CREATE TABLE [dbo].[ticket] (
     [Idticket]  INT          NOT NULL,
     [tipo]      VARCHAR (50) NOT NULL,
@@ -7,38 +21,45 @@ CREATE TABLE [dbo].[ticket] (
     [idArtista] INT          NOT NULL
 );
 
-
-USE [RealityFirst]
+UUSE [RealityFirst]
 GO
 
-/****** Objeto: Table [dbo].[noticia] Fecha del script: 23-06-2022 16:49:38 ******/
+/****** Objeto: Table [dbo].[noticia] Fecha del script: 28-06-2022 11:33:32 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
+DROP TABLE [dbo].[noticia];
+
+
+GO
 CREATE TABLE [dbo].[noticia] (
-    [IdNoticia]         INT          NOT NULL,
+    [IdNoticia]         INT           NOT NULL,
     [titulo]            VARCHAR (100) NOT NULL,
-    [Subtitulo]        VARCHAR (200) NOT NULL,
-    [Autor]             VARCHAR (50) NOT NULL,
-    [fecha_publicacion] VARCHAR (50) NOT NULL,
+    [Subtitulo]         VARCHAR (200) NOT NULL,
+    [Autor]             VARCHAR (50)  NOT NULL,
+    [fecha_publicacion] VARCHAR (50)  NOT NULL,
     [noticia]           VARCHAR (500) NOT NULL,
-    [idArtista]         INT          NOT NULL
+    [idArtista]         INT           NOT NULL
 );
 
 
 USE [RealityFirst]
 GO
 
-/****** Objeto: Table [dbo].[artista] Fecha del script: 23-06-2022 16:49:13 ******/
+/****** Objeto: Table [dbo].[artista] Fecha del script: 28-06-2022 11:37:56 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
+DROP TABLE [dbo].[artista];
+
+
+GO
 CREATE TABLE [dbo].[artista] (
     [IdArtista]        INT          NOT NULL,
     [Artista]          VARCHAR (50) NOT NULL,
@@ -48,23 +69,28 @@ CREATE TABLE [dbo].[artista] (
     [genero]           VARCHAR (50) NOT NULL
 );
 
+ 
 USE [RealityFirst]
 GO
 
-/****** Objeto: Table [dbo].[Evento] Fecha del script: 23-06-2022 16:52:41 ******/
+/****** Objeto: Table [dbo].[Evento] Fecha del script: 28-06-2022 11:38:27 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
+DROP TABLE [dbo].[Evento];
+
+
+GO
 CREATE TABLE [dbo].[Evento] (
-    [IdEvento   ]    INT          NOT NULL,
-    [evento     ]      VARCHAR (50) NOT NULL,
-    [lugar      ]       VARCHAR (50) NOT NULL,
+    [IdEvento]    INT          NOT NULL,
+    [evento]      VARCHAR (50) NOT NULL,
+    [lugar]       VARCHAR (50) NOT NULL,
     [fechaEvento] VARCHAR (50) NOT NULL,
-    [idArtista  ]   INT          NOT NULL,
-    [tipoEvento ]  VARCHAR (50) NOT NULL
+    [idArtista]   INT          NOT NULL,
+    [tipoEvento]  VARCHAR (50) NOT NULL
 );
 
 
