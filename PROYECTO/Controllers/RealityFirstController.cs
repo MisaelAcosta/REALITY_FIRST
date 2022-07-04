@@ -14,7 +14,7 @@ namespace PROYECTO.Controllers
         public RealityFirstController(IConfiguration config)
         {
             this.config = config;
-            string ConnectionString = config.GetConnectionString("RealityFirst");
+            string ConnectionString = config.GetConnectionString("DBDRealityFirst");
 
             app = new ArtistaServicio(ConnectionString);
         }
@@ -24,18 +24,24 @@ namespace PROYECTO.Controllers
 
             return View();
         }
+        public IActionResult PruebasAntesDe(int id)
+        {
+            ModeloArtista obj = app.GetArtista(id);
+
+            return View("Artistas", obj);
+        }
         public IActionResult Contacto()
         {
             return View();
         }
         public IActionResult Noticias()
         {
-            IList<modeloArtista> listaNoticia = app.GetAllNoticia();
-            return View(listaNoticia);
+            
+            return View();
         }
         public IActionResult Artistas()
         {
-            IList<modeloArtista> listaArtista = app.GetAll();    
+            IList<ModeloArtista> listaArtista = app.GetAll();    
 
             return View("Artistas",listaArtista);
         }

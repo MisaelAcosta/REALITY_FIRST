@@ -1,7 +1,7 @@
 ﻿
 namespace PROYECTO.Models
 {
-    public class modeloArtista
+    public class ModeloArtista
     {
         private int idArtista;
         private string artista;
@@ -19,7 +19,7 @@ namespace PROYECTO.Models
         public int Edad { get => edad; set => edad = value; }
         public string Genero { get => genero; set => genero = value; }
 
-        public modeloArtista()
+        public ModeloArtista()
         {
 
         }

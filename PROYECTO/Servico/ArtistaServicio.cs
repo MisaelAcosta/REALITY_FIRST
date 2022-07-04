@@ -6,7 +6,7 @@ using System.Data.SqlTypes;
 
 namespace PROYECTO.Servico
 {
-    public class ArtistaServicio : IServicio<modeloArtista>
+    public class ArtistaServicio : IServicio<ModeloArtista>
     {
         private string Connection;
 
@@ -14,9 +14,9 @@ namespace PROYECTO.Servico
         {
             this.Connection = ConnectionString;
         }
-        public void Create(modeloArtista obj)
+        public void Create(ModeloArtista obj)
         {
-            modeloArtista MArtista = new modeloArtista ();
+            ModeloArtista MArtista = new ModeloArtista ();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -27,7 +27,7 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            MArtista = new modeloArtista()
+                            MArtista = new ModeloArtista()
                             {
                                 IdArtista = reader.GetInt32(0),
                                 Artista = reader.GetString(1),
@@ -44,7 +44,7 @@ namespace PROYECTO.Servico
         }
         public void Delete(int id)
         {
-            modeloArtista MArtista = new modeloArtista();
+            ModeloArtista MArtista = new ModeloArtista();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -55,7 +55,7 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            MArtista = new modeloArtista()
+                            MArtista = new ModeloArtista()
                             {
                                 IdArtista = reader.GetInt32(0),
                                 Artista = reader.GetString(1),
@@ -70,9 +70,9 @@ namespace PROYECTO.Servico
                 server.Close();
             }
         }
-        public modeloArtista GetArtista(int id)
+        public ModeloArtista GetArtista(int id)
         {
-            modeloArtista MArtista = new modeloArtista();   
+            ModeloArtista MArtista = new ModeloArtista();   
             using (SqlConnection server=new SqlConnection(Connection))
             {
                 server.Open();
@@ -83,7 +83,7 @@ namespace PROYECTO.Servico
                     using (SqlDataReader reader = cmd.ExecuteReader())
                         while (reader.Read())
                         {
-                            MArtista = new modeloArtista()
+                            MArtista = new ModeloArtista()
                             {
                                 IdArtista = reader.GetInt32(0),
                                 Artista = reader.GetString(1),
@@ -101,9 +101,9 @@ namespace PROYECTO.Servico
 
         }
 
-        public IList<modeloArtista> GetAll()
+        public IList<ModeloArtista> GetAll()
         {
-            IList<modeloArtista> listaArtista = new List<modeloArtista>();
+            IList<ModeloArtista> listaArtista = new List<ModeloArtista>();
             using(SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -112,7 +112,7 @@ namespace PROYECTO.Servico
                 {
                     using(SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        listaArtista.Add(new modeloArtista()
+                        listaArtista.Add(new ModeloArtista()
                         {
                             IdArtista = reader.GetInt32(0),
                             Artista = reader.GetString(1),
@@ -131,9 +131,9 @@ namespace PROYECTO.Servico
         }
 
        
-        public void Update(modeloArtista obj)
+        public void Update(ModeloArtista obj)
         {
-            modeloArtista MArtista = new modeloArtista();
+            ModeloArtista MArtista = new ModeloArtista();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -144,7 +144,7 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            MArtista = new modeloArtista()
+                            MArtista = new ModeloArtista()
                             {
                                 IdArtista = reader.GetInt32(0),
                                 Artista = reader.GetString(1),
@@ -160,7 +160,7 @@ namespace PROYECTO.Servico
             }
         }
 
-        public modeloArtista Get(int id)
+        public ModeloArtista Get(int id)
         {
             throw new NotImplementedException();
         }

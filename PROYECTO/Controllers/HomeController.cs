@@ -35,6 +35,11 @@ namespace Pruebas.Controllers
         {
             return View();
         }
+        public IActionResult PruebasAntesDe()
+        {
+            
+            return View();
+        }
 
         public IActionResult Artistas()
         {
