@@ -8,7 +8,7 @@ namespace PROYECTO.Controllers
     public class RealityFirstController : Controller
     {
         IConfiguration config;
-        RealityServicio app;
+        ArtistaServicio app;
         
 
         public RealityFirstController(IConfiguration config)
@@ -16,7 +16,7 @@ namespace PROYECTO.Controllers
             this.config = config;
             string ConnectionString = config.GetConnectionString("RealityFirst");
 
-            app = new RealityServicio(ConnectionString);
+            app = new ArtistaServicio(ConnectionString);
         }
 
         public IActionResult Entradas()
@@ -30,12 +30,12 @@ namespace PROYECTO.Controllers
         }
         public IActionResult Noticias()
         {
-            IList<RealityFirst> listaNoticia = app.GetAllNoticia();
+            IList<modeloArtista> listaNoticia = app.GetAllNoticia();
             return View(listaNoticia);
         }
         public IActionResult Artistas()
         {
-            IList<RealityFirst> listaArtista = app.GetAll();    
+            IList<modeloArtista> listaArtista = app.GetAll();    
 
             return View("Artistas",listaArtista);
         }
