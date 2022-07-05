@@ -1,6 +1,6 @@
 ﻿namespace PROYECTO.Models
 {
-    public class modeloTicket
+    public class ModeloTicket
     {
         private int idticket;
         private string tipo;
@@ -12,7 +12,7 @@
         public string Espacio { get => espacio; set => espacio = value; }
         public int Precio { get => precio; set => precio = value; }
 
-        public modeloTicket()
+        public ModeloTicket()
         {
 
         }

@@ -4,7 +4,7 @@ using PROYECTO.Servico.Contrato;
 
 namespace PROYECTO.Servico
 {
-    public class EventoServicio : IServicio<modeloEvento>
+    public class EventoServicio : IServicio<ModeloEvento>
     {
         private string Connection;
 
@@ -13,9 +13,9 @@ namespace PROYECTO.Servico
             this.Connection = ConneccionString;
         }
 
-        public void Create(modeloEvento obj)
+        public void Create(ModeloEvento obj)
         {
-            modeloEvento MEvento = new modeloEvento();
+            ModeloEvento MEvento = new ModeloEvento();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -27,7 +27,7 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            MEvento = new modeloEvento()
+                            MEvento = new ModeloEvento()
                             {
                                 IdEvento = reader.GetInt32(0),
                                 Evento = reader.GetString(1),
@@ -44,7 +44,7 @@ namespace PROYECTO.Servico
 
         public void Delete(int id)
         {
-            modeloEvento MEvento = new modeloEvento();
+            ModeloEvento MEvento = new ModeloEvento();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -55,7 +55,7 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            MEvento = new modeloEvento()
+                            MEvento = new ModeloEvento()
                             {
                                 IdEvento = reader.GetInt32(0),
                                 Evento = reader.GetString(1),
@@ -70,9 +70,9 @@ namespace PROYECTO.Servico
             }
         }
 
-        public modeloEvento Get(int id)
+        public ModeloEvento Get(int id)
         {
-            modeloEvento MEvento = new modeloEvento();
+            ModeloEvento MEvento = new ModeloEvento();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -83,7 +83,7 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            MEvento = new modeloEvento()
+                            MEvento = new ModeloEvento()
                             {
                                 IdEvento = reader.GetInt32(0),
                                 Evento = reader.GetString(1),
@@ -99,9 +99,9 @@ namespace PROYECTO.Servico
             return MEvento;
         }
 
-        public IList<modeloEvento> GetAll()
+        public IList<ModeloEvento> GetAll()
         {
-            IList<modeloEvento> listaEvento = new List<modeloEvento>();
+            IList<ModeloEvento> listaEvento = new List<ModeloEvento>();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -112,7 +112,7 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            listaEvento.Add(new modeloEvento()
+                            listaEvento.Add(new ModeloEvento()
                             {
                                 IdEvento = reader.GetInt32(0),
                                 Evento = reader.GetString(1),
@@ -128,9 +128,9 @@ namespace PROYECTO.Servico
             return listaEvento;
         }
 
-        public void Update(modeloEvento obj)
+        public void Update(ModeloEvento obj)
         {
-            modeloEvento MEvento = new modeloEvento();
+            ModeloEvento MEvento = new ModeloEvento();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -141,7 +141,7 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            MEvento = new modeloEvento()
+                            MEvento = new ModeloEvento()
                             {
                                 IdEvento = reader.GetInt32(0),
                                 Evento = reader.GetString(1),

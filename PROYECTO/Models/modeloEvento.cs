@@ -1,6 +1,6 @@
 ﻿namespace PROYECTO.Models
 {
-    public class modeloEvento
+    public class ModeloEvento
     {
         private int idEvento;
         private string evento;
@@ -14,7 +14,7 @@
         public string FechaEvento { get => fechaEvento; set => fechaEvento = value; }
         public string TipoEvento { get => tipoEvento; set => tipoEvento = value; }
 
-        public modeloEvento()
+        public ModeloEvento()
         {
 
         }
