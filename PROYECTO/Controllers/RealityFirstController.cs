@@ -8,9 +8,10 @@ namespace PROYECTO.Controllers
     public class RealityFirstController : Controller
     {
         IConfiguration config;
-        ArtistaServicio app;
+        ArtistaServicio AS;
         NoticiaServicio NS;
         EventoServicio ES;
+        TicketServicio TicketS;
 
 
 #pragma warning disable CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
@@ -20,21 +21,22 @@ namespace PROYECTO.Controllers
             this.config = config;
             string ConnectionString = config.GetConnectionString("DBDRealityFirst");
 
-            app = new ArtistaServicio(ConnectionString);
+            AS = new ArtistaServicio(ConnectionString);
             NS = new NoticiaServicio(ConnectionString);
             ES = new EventoServicio(ConnectionString);
+            TicketS = new TicketServicio(ConnectionString);
         }
 
-        public IActionResult Entradas()
+        public IActionResult Entradas(int id )
         {
-
-            return View();
+            ModeloTicket obj= TicketS.Get(id);
+            return View(obj);
         }
         public IActionResult PruebasAntesDe()
         {
-            IList<ModeloArtista> ListaArtista = app.GetAll();
+            IList<ModeloArtista> ListaArtista = AS.GetAll();
 
-            return View("Pruebas", ListaArtista);
+            return View(ListaArtista);
         }
         public IActionResult Contacto()
         {
@@ -44,13 +46,13 @@ namespace PROYECTO.Controllers
         {
 
            IList<ModeloNoticia> ListaNoticia = NS.GetAll();
-            return View("Noticias", ListaNoticia);
+            return View(ListaNoticia);
         }
         public IActionResult Artistas()
         {
-            IList<ModeloArtista> listaArtista = app.GetAll();    
+            IList<ModeloArtista> listaArtista = AS.GetAll();    
 
-            return View("Artistas",listaArtista);
+            return View(listaArtista);
         }
 
         public IActionResult Ingresar()

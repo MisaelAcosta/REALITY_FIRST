@@ -1,7 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using PROYECTO.Models;
 using PROYECTO.Servico.Contrato;
-using System.Data.SqlTypes;
 
 
 namespace PROYECTO.Servico
@@ -70,37 +69,7 @@ namespace PROYECTO.Servico
                 server.Close();
             }
         }
-        public ModeloArtista GetArtista(int id)
-        {
-            ModeloArtista MArtista = new ModeloArtista();   
-            using (SqlConnection server=new SqlConnection(Connection))
-            {
-                server.Open();
-
-                string query = string.Format("Select artista from dbo.artista where IdArtista = "+id+";");
-                using (SqlCommand cmd = new SqlCommand(query, server)) 
-                {
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                        while (reader.Read())
-                        {
-                            MArtista = new ModeloArtista()
-                            {
-                                IdArtista = reader.GetInt32(0),
-                                Artista = reader.GetString(1),
-                                Lugar_nacimiento = reader.GetString(2),
-                                FechaNac = reader.GetString(3),
-                                Edad = reader.GetInt32(4),
-                                Genero = reader.GetString(5),
-                            };
-                        }
-                }
-                server.Close();
-            }
-            return MArtista;  
-            
-
-        }
-
+        
         public IList<ModeloArtista> GetAll()
         {
             IList<ModeloArtista> listaArtista = new List<ModeloArtista>();
@@ -162,7 +131,31 @@ namespace PROYECTO.Servico
 
         public ModeloArtista Get(int id)
         {
-            throw new NotImplementedException();
+            ModeloArtista MArtista = new ModeloArtista();
+            using (SqlConnection server = new SqlConnection(Connection))
+            {
+                server.Open();
+
+                string query = string.Format("Select artista from dbo.artista where IdArtista = " + id + ";");
+                using (SqlCommand cmd = new SqlCommand(query, server))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                        while (reader.Read())
+                        {
+                            MArtista = new ModeloArtista()
+                            {
+                                IdArtista = reader.GetInt32(0),
+                                Artista = reader.GetString(1),
+                                Lugar_nacimiento = reader.GetString(2),
+                                FechaNac = reader.GetString(3),
+                                Edad = reader.GetInt32(4),
+                                Genero = reader.GetString(5),
+                            };
+                        }
+                }
+                server.Close();
+            }
+            return MArtista;
         }
     }
 }
