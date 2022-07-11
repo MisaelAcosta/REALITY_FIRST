@@ -4,141 +4,115 @@
     <h1>BIENVENIDO</h1>
 </div>
 
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <br />
-        <br />
-      <h1>¡TENEMOS NOTICIAS!</h1>
-      <br />
-      <br />
-      <p class="align-content-center">En esta sección, conocerás las noticias más importantes de los tres artistas más vendidos y populares de la semana!. No te pierdas
-          los mejores datos curiosos de tu banda o grupo músical favorito.
+ <nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand"></a>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+  </form>
+</nav>
 
-      </p>
-      <br />
-      <br />
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="cards-wrapper">
-          <div class="card">
-            <img src="/multimedia/halloween.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">HELLOWEEN</h5>
-          <p class="card-text">  ¡Helloween regresa a Chile junto a Hammerfall! Porque el público así lo pidió, Helloween, una de las agrupaciones más trascendentales de la música a nivel mundial, regresa al país para presentar su “United Forces Tour 2022”
-              <br> Fecha: 22 de Octubre de 2022
-              <br> Lugar: Estadio nacional <br>
-              ¡Te esperamos!
-          </p>
-              <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Comprar entradas</a>
-            </div>
+<div class="containertarjetas">
+      <div class="row">
+          <div class="col-md-4">
+              <div class="card p-3 mb-2">
+                  <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                          <img src="/multimedia/mt.jpg" width="100" height="100" class="card-img-top" alt="...">
+                      </div>
+                      <div class="badge"> <span>Urbano</span> </div>
+                  </div>
+                  <div class="mt-5">
+                      <p>El cantautor puertorriqueño nominado en la categoría Artista del Año de los Latin American Music Awards 2022. Es uno de los artistas más inflyuentes del género.</p>
+                      <div class="mt-5">
+                          <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Comprar Entradas</a>
+                      </div>
+                  </div>
+              </div>
           </div>
-          <div class="card d-none d-md-block">
-            <img src="/multimedia/mt.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-             <h5 class="card-title">MYKE TOWERS</h5>
-          <p class="card-text" >Nominado en la categoría Artista del Año de los Latin American Music Awards 2022.
-              No te pierdas al imperdible Myke Towers en concierto.
-              <br>Fecha: 23 de Septiembre de 2022. 
-              <br>Lugar: Movistar Arena <br>
-              ¡Te esperamos!
-              </p>
-              <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Comprar Entradas</a>
-            </div>
+          <div class="col-md-4">
+              <div class="card p-3 mb-2">
+                  <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                          <img src="/multimedia/halloween.jpg" width="100" height="100" class="card-img-top" alt="...">
+                      </div>
+                      <div class="badge"> <span>Metal</span> </div>
+                  </div>
+                  <div class="mt-5">
+                      <p class="heading">Helloween es una banda alemana de power y heavy metal, son considerados "los padres del heavy metal" y la banda mas influyente para el desarrollo de dicho subgenero.</p>
+                      <div class="mt-5">
+                         <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Comprar Entradas</a>
+                      </div>
+                  </div>
+              </div>
           </div>
-          <div class="card d-none d-md-block">
-            <img src="/multimedia/coldplay.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-               <h5 class="card-title">COLDPLAY</h5>
-               <p class="card-text">Ya se han vendido más de dos millones de tickets para la Gira Mundial Music of the Spheres. 
-               <br>Fecha: 21, 23 y 24 de septiembre 2022.
-               <br>Lugar: Estadio Nacional.<br>
-              ¡Te esperamos!
-               </p>
-              <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Comprar Entradas</a>
-            </div>
+          <div class="col-md-4">
+              <div class="card p-3 mb-2">
+                  <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                          <img src="/multimedia/coldplay.jpg" width="100" height="100" class="card-img-top" alt="...">
+                         
+                      </div>
+                      <div class="badge"> <span>Pop Rock</span> </div>
+                  </div>
+                  <div class="mt-5">
+                      <p class="heading">La banda británica de pop rock y rock alternativo formada en Londres, es uno de los grupos mas relevantes e influyentes de la década de los 2000, 2010 y la actualidad.</p>
+                      <div class="mt-5">
+                           <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Comprar Entradas</a>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
-        </div>
-       </div>
-     </div>
-    
-
-<div class='noticias'>
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="/multimedia/halloween.jpg" width="600" class="card-img-top" alt="...">
+          <div class="col-md-4">
+              <div class="card p-3 mb-2">
+                  <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                          <img src="/multimedia/pt.jpg" width="100" height="100" class="card-img-top" alt="...">
+                      </div>
+                      <div class="badge"> <span>Rock</span> </div>
+                  </div>
+                  <div class="mt-5">
+                      <p class="heading">PORCUPINE TREE, una de las bandas más reconocidas y destacadas del rock progresivo y metal progresivo. Es el proyecto más exitoso de Steven Wilson.</p>
+                      <div class="mt-5">
+                          <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Comprar Entradas</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card p-3 mb-2">
+                  <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                          <img src="/multimedia/Joyeux-40e-anniversaire-deadmau5-celebrez-avec-5-de-ses-titres.jpg" height="100" width="100" class="card-img-top" alt="...">
+                      </div>
+                      <div class="badge"> <span>House</span> </div>
+                  </div>
+                  <div class="mt-5">
+                      <p class="heading">Joel Zimmerman, más conocido como Deadmau5, es un DJ y productor canadiense principalmente de house. Su álbum debut, Get scraped, se publicó en 2005.</p>
+                      <div class="mt-5">
+                          <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Comprar Entradas</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card p-3 mb-2">
+                  <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                          <img src="/multimedia/foto_de_john-mayer-1.jpg" width="100" height="100" class="card-img-top" alt="...">
+                      </div>
+                      <div class="badge"> <span>POP</span> </div>
+                  </div>
+                  <div class="mt-5">
+                      <p class="heading">John Mayer, es un cantante, compositor y productor discográfico estadounidense.En 2003, ganó un Grammy en la categoría mejor interpretación vocal pop masculina.</p>
+                      <div class="mt-5">
+                          <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Comprar Entradas</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">HELLOWEEN</h5>
-          <p class="card-text">  ¡Helloween regresa a Chile junto a Hammerfall! Porque el público así lo pidió, Helloween, una de las agrupaciones más trascendentales de la música a nivel mundial, regresa al país para presentar su “United Forces Tour 2022”
-              <br> Fecha: 22 de Octubre de 2022
-              <br> Lugar: Estadio nacional <br>
-              ¡Te esperamos!
-          </p>
-          <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Comprar entradas</a>
-
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="/multimedia/mt.jpg" width="500" class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">MYKE TOWERS</h5>
-          <p class="card-text" >Nominado en la categoría Artista del Año de los Latin American Music Awards 2022.
-              No te pierdas al imperdible Myke Towers en concierto.
-              <br>Fecha: 23 de Septiembre de 2022. 
-              <br>Lugar: Movistar Arena <br>
-              ¡Te esperamos!
-              </p>
-          <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Comprar entradas</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="/multimedia/coldplay.jpg" width="500" class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">COLDPLAY</h5>
-          <p class="card-text">Ya se han vendido más de dos millones de tickets para la Gira Mundial Music of the Spheres. 
-               <br>Fecha: 21, 23 y 24 de septiembre 2022.
-               <br>Lugar: Estadio Nacional.<br>
-              ¡Te esperamos!
-          </p>
-          <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Comprar entradas</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="/multimedia/pt.jpg" width="500" class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">PORCUPINE TREE</h5>
-          <p class="card-text">“PORCUPINE TREE, una de las bandas más reconocidas y destacadas del rock progresivo y uno de los 
-              proyectos más exitosos de Steven Wilson  confirmó el lanzamiento, luego de 12 años, las fechas de su gira que los trae a Chile. 
-               <br>Fecha: viernes 7 de octubre de 2022
-               <br>Lugar: Movistar Arena.
-               <br> ¡Te esperamos!.
-          </p>
-          <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Comprar entradas</a>
-        </div>
-      </div>
-    </div>
   </div>
 
-  </div>
 
   <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

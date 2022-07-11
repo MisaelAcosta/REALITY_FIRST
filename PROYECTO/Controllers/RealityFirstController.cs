@@ -27,10 +27,9 @@ namespace PROYECTO.Controllers
             TicketS = new TicketServicio(ConnectionString);
         }
 
-        public IActionResult Entradas(int id )
+        public IActionResult Entradas(int id, object ticketServicio)
         {
-            ModeloTicket obj= TicketS.Get(id);
-            return View(obj);
+            return View(ticketServicio);
         }
         public IActionResult PruebasAntesDe()
         {
