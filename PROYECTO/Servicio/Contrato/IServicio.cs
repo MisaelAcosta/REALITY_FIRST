@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using PROYECTO.Models;
-namespace PROYECTO.Servico.Contrato
+namespace PROYECTO.Servicio
 {
     public interface IServicio<T>
     {

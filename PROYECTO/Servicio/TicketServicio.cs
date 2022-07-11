@@ -1,10 +1,10 @@
 ﻿using Microsoft.Data.SqlClient;
 using PROYECTO.Models;
-using PROYECTO.Servico.Contrato;
+using PROYECTO.Servicio;
 
-namespace PROYECTO.Servico
+namespace PROYECTO.Servicio
 {
-    public class TicketServicio : IServicio<ModeloTicket>
+    public class TicketServicio : IServicio<Ticket>
     {
         private string Connection;
 
@@ -13,9 +13,9 @@ namespace PROYECTO.Servico
             this.Connection=  ConneccionString;
         }
 
-        public void Create(ModeloTicket obj)
+        public void Create(Ticket obj)
         {
-            ModeloTicket MTicket = new ModeloTicket();
+            Ticket MTicket = new Ticket();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -26,7 +26,7 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            MTicket = new ModeloTicket()
+                            MTicket = new Ticket()
                             {
                                 Idticket=reader.GetInt32(0),
                                 Tipo=reader.GetString(1),
@@ -42,7 +42,7 @@ namespace PROYECTO.Servico
 
         public void Delete(int id)
         {
-            ModeloTicket MTicket = new ModeloTicket();
+            Ticket MTicket = new Ticket();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -53,7 +53,7 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            MTicket = new ModeloTicket()
+                            MTicket = new Ticket()
                             {
                                 Idticket = reader.GetInt32(0),
                                 Tipo = reader.GetString(1),
@@ -67,9 +67,9 @@ namespace PROYECTO.Servico
             }
         }
 
-        public ModeloTicket Get(int id)
+        public Ticket Get(int id)
         {
-            ModeloTicket MTicket = new ModeloTicket();
+            Ticket MTicket = new Ticket();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -80,7 +80,7 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            MTicket = new ModeloTicket()
+                            MTicket = new Ticket()
                             {
                                 Idticket = reader.GetInt32(0),
                                 Tipo = reader.GetString(1),
@@ -95,9 +95,9 @@ namespace PROYECTO.Servico
             return MTicket;
         }
 
-        public IList<ModeloTicket> GetAll()
+        public IList<Ticket> GetAll()
         {
-            IList<ModeloTicket> ListaEntradas = new List<ModeloTicket>();
+            IList<Ticket> ListaEntradas = new List<Ticket>();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -108,7 +108,7 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            ListaEntradas.Add(new ModeloTicket()
+                            ListaEntradas.Add(new Ticket()
                             {
                                 Idticket = reader.GetInt32(0),
                                 Tipo = reader.GetString(1),
@@ -123,9 +123,9 @@ namespace PROYECTO.Servico
             return ListaEntradas;
         }
 
-        public void Update(ModeloTicket obj)
+        public void Update(Ticket obj)
         {
-            ModeloTicket MTicket = new ModeloTicket();
+            Ticket MTicket = new Ticket();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -136,7 +136,7 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            MTicket = new ModeloTicket()
+                            MTicket = new Ticket()
                             {
                                 Idticket = reader.GetInt32(0),
                                 Tipo = reader.GetString(1),
@@ -148,6 +148,36 @@ namespace PROYECTO.Servico
                 }
                 server.Close();
             }
+        }
+
+        public Ticket ObtenerTicket(int id)
+        {
+            Ticket MTicket = new Ticket();
+            using (SqlConnection server = new SqlConnection(Connection))
+            {
+                server.Open();
+                string query = string.Format("select precio from dbo.ticket where IdTicket=" + id);
+                using (SqlCommand cmd = new SqlCommand(query, server))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            MTicket = new Ticket()
+                            {
+                                Idticket = reader.GetInt32(0),
+                                Tipo = reader.GetString(1),
+                                Espacio = reader.GetString(2),
+                                Precio = reader.GetInt32(3),
+                                IdArtista = reader.GetInt32(4)
+                                
+                            };
+                        }
+                    }
+                }
+                server.Close();
+            }
+            return MTicket;
         }
     }
 }

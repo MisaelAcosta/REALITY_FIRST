@@ -1,41 +1,62 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PROYECTO.Models;
-using PROYECTO.Servico;
+using PROYECTO.Servicio;
 using System.Diagnostics;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Configuration;
+using Microsoft.Extensions.Configuration;
 
 namespace PROYECTO.Controllers
 {
     public class RealityFirstController : Controller
     {
+        
+        
         IConfiguration config;
-        ArtistaServicio AS;
-        NoticiaServicio NS;
-        EventoServicio ES;
-        TicketServicio TicketS;
+        ArtistaServicio aServicio;
+        NoticiaServicio nServicio;
+        //  EventoServicio eServicio;
+        TicketServicio tServicio;
+        pruebaServicio pServicio;
 
+        //private readonly ILogger<RealityFirstController> _logger;
 
-#pragma warning disable CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
+        //public RealityFirstController(ILogger<RealityFirstController> logger)
+        //{
+        //    _logger = logger;
+        //}
         public RealityFirstController(IConfiguration config)
-#pragma warning restore CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
         {
             this.config = config;
-            string ConnectionString = config.GetConnectionString("DBDRealityFirst");
+            string ConnectionString = config.GetConnectionString("dbRealityFirst");
 
-            AS = new ArtistaServicio(ConnectionString);
-            NS = new NoticiaServicio(ConnectionString);
-            ES = new EventoServicio(ConnectionString);
-            TicketS = new TicketServicio(ConnectionString);
+            aServicio = new ArtistaServicio(ConnectionString);
+            nServicio = new NoticiaServicio(ConnectionString);
+            pServicio = new pruebaServicio(ConnectionString);
+            //    eServicio = new EventoServicio(ConnectionString);
+            tServicio = new TicketServicio(ConnectionString);
         }
 
+<<<<<<< Updated upstream
         public IActionResult Entradas(int id, object ticketServicio)
         {
             return View(ticketServicio);
+=======
+        public IActionResult Entradas(int id)
+        {
+            Ticket obj = tServicio.Get(id);
+            return View();
+>>>>>>> Stashed changes
         }
+
         public IActionResult PruebasAntesDe()
         {
-            IList<ModeloArtista> ListaArtista = AS.GetAll();
+            IList<Artista> listaArtista = pServicio.GetAll();
 
-            return View(ListaArtista);
+            return View("PruebasAntesDe",listaArtista);
         }
         public IActionResult Contacto()
         {
@@ -44,16 +65,19 @@ namespace PROYECTO.Controllers
         public IActionResult Noticias()
         {
 
-           IList<ModeloNoticia> ListaNoticia = NS.GetAll();
+            IList<Noticia> ListaNoticia = nServicio.GetAll();
             return View(ListaNoticia);
         }
         public IActionResult Artistas()
         {
-            IList<ModeloArtista> listaArtista = AS.GetAll();    
+            IList<Artista> listaArtista = aServicio.GetAll();
 
             return View(listaArtista);
         }
-
+        public IActionResult Index()
+        {
+            return View();
+        }
         public IActionResult Ingresar()
         {
             return View();

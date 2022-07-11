@@ -1,20 +1,27 @@
-﻿@model ModeloArtista
+﻿@model IList<Artista>
+@{
+}
 
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>fecha de nacimiento</th>
-        <th>lugar de nacimiento del artista</th>
-        <th>edad del artista</th>
-        <th>genero musical del artista</th>
-    </tr>
-    <tr>
-        <td>IdArtista</td>
-        <td>Artista</td>
-        <td>FechaNac</td>
-        <td>Lugar_nacimiento</td>
-        <td>Edad años</td>
-        <td>Genero</td>
-    </tr>
-</table>
+@foreach (Artista Artista in Model)
+{
+    <div class="col-4">
+        <div class="card" style="width: 18rem;">
+           
+            <div class="card-body">
+                <h5 class="card-title">@Artista.Nombre</h5>
+                <p class="card-text">
+                    <ul>
+                        <li>
+                            edad: @Artista.Edad
+                        </li>
+                        <li>
+                            genero: @Artista.Genero
+                        </li>
+                       
+                    </ul>
+                </p>
+                
+            </div>
+        </div>
+    </div>
+}

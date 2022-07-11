@@ -1,8 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using PROYECTO.Models;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Pruebas.Controllers
+
+namespace PROYECTO.Controllers
 {
     public class HomeController : Controller
     {

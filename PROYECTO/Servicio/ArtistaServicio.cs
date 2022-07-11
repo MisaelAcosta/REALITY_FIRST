@@ -1,11 +1,11 @@
 ﻿using Microsoft.Data.SqlClient;
 using PROYECTO.Models;
-using PROYECTO.Servico.Contrato;
+using PROYECTO.Servicio;
 
 
-namespace PROYECTO.Servico
+namespace PROYECTO.Servicio
 {
-    public class ArtistaServicio : IServicio<ModeloArtista>
+    public class ArtistaServicio : IServicio<Artista>
     {
         private string Connection;
 
@@ -13,23 +13,23 @@ namespace PROYECTO.Servico
         {
             this.Connection = ConnectionString;
         }
-        public void Create(ModeloArtista obj)
+        public void Create(Artista obj)
         {
-            ModeloArtista MArtista = new ModeloArtista ();
+            Artista MArtista = new Artista ();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
-                string query = string.Format("insert into dbo.Artista values (" + obj.IdArtista + ",'" + obj.Artista+"','"+obj.Lugar_nacimiento+"','"+obj.FechaNac+"',"+obj.Edad+",'"+obj.Genero+"');");
+                string query = string.Format("insert into dbo.Artista values (" + obj.IdArtista + ",'" + obj.Nombre+"','"+obj.Lugar_nacimiento+"','"+obj.FechaNac+"',"+obj.Edad+",'"+obj.Genero+"');");
                 using (SqlCommand cmd = new SqlCommand(query, server))
                 {
                     using(SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            MArtista = new ModeloArtista()
+                            MArtista = new Artista()
                             {
                                 IdArtista = reader.GetInt32(0),
-                                Artista = reader.GetString(1),
+                                Nombre = reader.GetString(1),
                                 Lugar_nacimiento = reader.GetString(2),
                                 FechaNac = reader.GetString(3),
                                 Edad = reader.GetInt32(4),
@@ -43,7 +43,7 @@ namespace PROYECTO.Servico
         }
         public void Delete(int id)
         {
-            ModeloArtista MArtista = new ModeloArtista();
+            Artista MArtista = new Artista();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -54,10 +54,10 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            MArtista = new ModeloArtista()
+                            MArtista = new Artista()
                             {
                                 IdArtista = reader.GetInt32(0),
-                                Artista = reader.GetString(1),
+                                Nombre = reader.GetString(1),
                                 Lugar_nacimiento = reader.GetString(2),
                                 FechaNac = reader.GetString(3),
                                 Edad = reader.GetInt32(4),
@@ -70,9 +70,9 @@ namespace PROYECTO.Servico
             }
         }
         
-        public IList<ModeloArtista> GetAll()
+        public IList<Artista> GetAll()
         {
-            IList<ModeloArtista> listaArtista = new List<ModeloArtista>();
+            IList<Artista> listaArtista = new List<Artista>();
             using(SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -81,15 +81,18 @@ namespace PROYECTO.Servico
                 {
                     using(SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        listaArtista.Add(new ModeloArtista()
+                        while (reader.Read())
+                        {
+                        listaArtista.Add(new Artista()
                         {
                             IdArtista = reader.GetInt32(0),
-                            Artista = reader.GetString(1),
+                            Nombre = reader.GetString(1),
                             Lugar_nacimiento = reader.GetString(2),
                             FechaNac = reader.GetString(3),
                             Edad = reader.GetInt32(4),
                             Genero = reader.GetString(5)
                         });
+                        }
                     }
                 }
                 server.Close();
@@ -100,23 +103,23 @@ namespace PROYECTO.Servico
         }
 
        
-        public void Update(ModeloArtista obj)
+        public void Update(Artista obj)
         {
-            ModeloArtista MArtista = new ModeloArtista();
+            Artista MArtista = new Artista();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
-                string query = string.Format("update dbo.Artista set Artista="+obj.Artista+" where IdArtista = " + obj.IdArtista);
+                string query = string.Format("update dbo.Artista set Artista="+obj.Nombre + " where IdArtista = " + obj.IdArtista);
                 using (SqlCommand cmd = new SqlCommand(query, server))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            MArtista = new ModeloArtista()
+                            MArtista = new Artista()
                             {
                                 IdArtista = reader.GetInt32(0),
-                                Artista = reader.GetString(1),
+                                Nombre = reader.GetString(1),
                                 Lugar_nacimiento = reader.GetString(2),
                                 FechaNac = reader.GetString(3),
                                 Edad = reader.GetInt32(4),
@@ -129,9 +132,9 @@ namespace PROYECTO.Servico
             }
         }
 
-        public ModeloArtista Get(int id)
+        public Artista Get(int id)
         {
-            ModeloArtista MArtista = new ModeloArtista();
+            Artista MArtista = new Artista();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -142,10 +145,10 @@ namespace PROYECTO.Servico
                     using (SqlDataReader reader = cmd.ExecuteReader())
                         while (reader.Read())
                         {
-                            MArtista = new ModeloArtista()
+                            MArtista = new Artista()
                             {
                                 IdArtista = reader.GetInt32(0),
-                                Artista = reader.GetString(1),
+                                Nombre = reader.GetString(1),
                                 Lugar_nacimiento = reader.GetString(2),
                                 FechaNac = reader.GetString(3),
                                 Edad = reader.GetInt32(4),

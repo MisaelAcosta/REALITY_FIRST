@@ -1,10 +1,10 @@
 ﻿using Microsoft.Data.SqlClient;
 using PROYECTO.Models;
-using PROYECTO.Servico.Contrato;
+using PROYECTO.Servicio;
 
 namespace PROYECTO.Servico
 {
-    public class EventoServicio : IServicio<ModeloEvento>
+    public class EventoServicio : IServicio<Evento>
     {
         private string Connection;
 
@@ -13,13 +13,13 @@ namespace PROYECTO.Servico
             this.Connection = ConneccionString;
         }
 
-        public void Create(ModeloEvento obj)
+        public void Create(Evento obj)
         {
-            ModeloEvento MEvento = new ModeloEvento();
+            Evento MEvento = new Evento();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
-                string query = string.Format("insert into dbo.evento values("+obj.IdEvento+",'"+obj.Evento+"','"+obj.FechaEvento
+                string query = string.Format("insert into dbo.evento values("+obj.IdEvento+",'"+obj.Nombre+"','"+obj.FechaEvento
                     +"','"+obj.Lugar+"','"+obj.TipoEvento+"´);");
                 using (SqlCommand cmd = new SqlCommand(query, server))
                 {
@@ -27,10 +27,10 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            MEvento = new ModeloEvento()
+                            MEvento = new Evento()
                             {
                                 IdEvento = reader.GetInt32(0),
-                                Evento = reader.GetString(1),
+                                Nombre = reader.GetString(1),
                                 FechaEvento = reader.GetString(2),
                                 Lugar=reader.GetString(3),
                                 TipoEvento=reader.GetString(4)
@@ -44,7 +44,7 @@ namespace PROYECTO.Servico
 
         public void Delete(int id)
         {
-            ModeloEvento MEvento = new ModeloEvento();
+            Evento MEvento = new Evento();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -55,10 +55,10 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            MEvento = new ModeloEvento()
+                            MEvento = new Evento()
                             {
                                 IdEvento = reader.GetInt32(0),
-                                Evento = reader.GetString(1),
+                                Nombre = reader.GetString(1),
                                 FechaEvento = reader.GetString(2),
                                 Lugar = reader.GetString(3),
                                 TipoEvento = reader.GetString(4)
@@ -70,9 +70,9 @@ namespace PROYECTO.Servico
             }
         }
 
-        public ModeloEvento Get(int id)
+        public Evento Get(int id)
         {
-            ModeloEvento MEvento = new ModeloEvento();
+            Evento MEvento = new Evento();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -83,10 +83,10 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            MEvento = new ModeloEvento()
+                            MEvento = new Evento()
                             {
                                 IdEvento = reader.GetInt32(0),
-                                Evento = reader.GetString(1),
+                                Nombre = reader.GetString(1),
                                 FechaEvento = reader.GetString(2),
                                 Lugar = reader.GetString(3),
                                 TipoEvento = reader.GetString(4)
@@ -99,9 +99,9 @@ namespace PROYECTO.Servico
             return MEvento;
         }
 
-        public IList<ModeloEvento> GetAll()
+        public IList<Evento> GetAll()
         {
-            IList<ModeloEvento> listaEvento = new List<ModeloEvento>();
+            IList<Evento> listaEvento = new List<Evento>();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
@@ -112,10 +112,10 @@ namespace PROYECTO.Servico
                     {
                         while (reader.Read())
                         {
-                            listaEvento.Add(new ModeloEvento()
+                            listaEvento.Add(new Evento()
                             {
                                 IdEvento = reader.GetInt32(0),
-                                Evento = reader.GetString(1),
+                                Nombre = reader.GetString(1),
                                 FechaEvento = reader.GetString(2),
                                 Lugar = reader.GetString(3),
                                 TipoEvento = reader.GetString(4)
@@ -128,23 +128,23 @@ namespace PROYECTO.Servico
             return listaEvento;
         }
 
-        public void Update(ModeloEvento obj)
+        public void Update(Evento obj)
         {
-            ModeloEvento MEvento = new ModeloEvento();
+            Evento MEvento = new Evento();
             using (SqlConnection server = new SqlConnection(Connection))
             {
                 server.Open();
-                string query = string.Format("update dbo.evento set Evento="+obj.Evento+" where IdEvento = "+obj.IdEvento);
+                string query = string.Format("update dbo.evento set Evento="+obj.Nombre + " where IdEvento = "+obj.IdEvento);
                 using (SqlCommand cmd = new SqlCommand(query, server))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            MEvento = new ModeloEvento()
+                            MEvento = new Evento()
                             {
                                 IdEvento = reader.GetInt32(0),
-                                Evento = reader.GetString(1),
+                                Nombre = reader.GetString(1),
                                 FechaEvento = reader.GetString(2),
                                 Lugar = reader.GetString(3),
                                 TipoEvento = reader.GetString(4)
