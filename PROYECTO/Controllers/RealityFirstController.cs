@@ -40,16 +40,13 @@ namespace PROYECTO.Controllers
             tServicio = new TicketServicio(ConnectionString);
         }
 
-<<<<<<< Updated upstream
-        public IActionResult Entradas(int id, object ticketServicio)
-        {
-            return View(ticketServicio);
-=======
+        
+
         public IActionResult Entradas(int id)
         {
-            Ticket obj = tServicio.Get(id);
+            //Ticket obj = tServicio.Get(id);
             return View();
->>>>>>> Stashed changes
+
         }
 
         public IActionResult PruebasAntesDe()
@@ -65,14 +62,18 @@ namespace PROYECTO.Controllers
         public IActionResult Noticias()
         {
 
-            IList<Noticia> ListaNoticia = nServicio.GetAll();
-            return View(ListaNoticia);
+            //IList<Noticia> ListaNoticia = nServicio.GetAll();
+            return View();
         }
         public IActionResult Artistas()
         {
-            IList<Artista> listaArtista = aServicio.GetAll();
+            //IList<Artista> listaArtista = aServicio.GetAll();
 
-            return View(listaArtista);
+            return View();
+        }
+        public IActionResult Pago()
+        {
+            return View();
         }
         public IActionResult Index()
         {

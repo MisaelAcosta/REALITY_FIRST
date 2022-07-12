@@ -1,0 +1,213 @@
+﻿@model IList<Artista>
+
+
+
+
+
+<div class='Artistas'>
+    <h1>NUESTROS ARTISTAS</h1>
+
+  <nav class="navbar  justify-content-between">
+  <a class="navbar-brand"></a>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+  </form>
+</nav>
+
+<div class="containertarjetas">
+      <div class="row">
+          <div class="col-md-4">
+              <div class="card p-3 mb-2">
+                  <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                          <img src="/multimedia/mt.jpg" width="100" height="100" class="card-img-top" alt="...">
+                      </div>
+                      <div class="badge"> <span>Urbano</span> </div>
+                  </div>
+                  <div class="mt-5">
+                      <p>El cantautor puertorriqueño nominado en la categoría Artista del Año de los Latin American Music Awards 2022. Es uno de los artistas más inflyuentes del género.</p>
+                      <div class="mt-5">
+                          <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Comprar Entradas</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card p-3 mb-2">
+                  <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                          <img src="/multimedia/halloween.jpg" width="100" height="100" class="card-img-top" alt="...">
+                      </div>
+                      <div class="badge"> <span>Metal</span> </div>
+                  </div>
+                  <div class="mt-5">
+                      <p class="heading">Helloween es una banda alemana de power y heavy metal, son considerados "los padres del heavy metal" y la banda mas influyente para el desarrollo de dicho subgenero.</p>
+                      <div class="mt-5">
+                         <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Comprar Entradas</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card p-3 mb-2">
+                  <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                          <img src="/multimedia/coldplay.jpg" width="100" height="100" class="card-img-top" alt="...">
+                         
+                      </div>
+                      <div class="badge"> <span>Pop Rock</span> </div>
+                  </div>
+                  <div class="mt-5">
+                      <p class="heading">La banda británica de pop rock y rock alternativo formada en Londres, es uno de los grupos mas relevantes e influyentes de la década de los 2000, 2010 y la actualidad.</p>
+                      <div class="mt-5">
+                           <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Comprar Entradas</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card p-3 mb-2">
+                  <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                          <img src="/multimedia/pt.jpg" width="100" height="100" class="card-img-top" alt="...">
+                      </div>
+                      <div class="badge"> <span>Rock</span> </div>
+                  </div>
+                  <div class="mt-5">
+                      <p class="heading">PORCUPINE TREE, una de las bandas más reconocidas y destacadas del rock progresivo y metal progresivo. Es el proyecto más exitoso de Steven Wilson.</p>
+                      <div class="mt-5">
+                          <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Comprar Entradas</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card p-3 mb-2">
+                  <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                          <img src="/multimedia/Joyeux-40e-anniversaire-deadmau5-celebrez-avec-5-de-ses-titres.jpg" height="100" width="100" class="card-img-top" alt="...">
+                      </div>
+                      <div class="badge"> <span>House</span> </div>
+                  </div>
+                  <div class="mt-5">
+                      <p class="heading">Joel Zimmerman, más conocido como Deadmau5, es un DJ y productor canadiense principalmente de house. Su álbum debut, Get scraped, se publicó en 2005.</p>
+                      <div class="mt-5">
+                          <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Comprar Entradas</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card p-3 mb-2">
+                  <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                          <img src="/multimedia/foto_de_john-mayer-1.jpg" width="100" height="100" class="card-img-top" alt="...">
+                      </div>
+                      <div class="badge"> <span>POP</span> </div>
+                  </div>
+                  <div class="mt-5">
+                      <p class="heading">John Mayer, es un cantante, compositor y productor discográfico estadounidense.En 2003, ganó un Grammy en la categoría mejor interpretación vocal pop masculina.</p>
+                      <div class="mt-5">
+                          <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Comprar Entradas</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- carusel mini ARTISTAS -->
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <h1>NUESTROS ARTISTAS</h1>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="cards-wrapper">
+          <div class="card">
+            <img src="/multimedia/ariel-szanto-aqA82Kt_bsE-unsplash.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">ULTRA</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Saber más...</a>
+            </div>
+          </div>
+          <div class="card d-none d-md-block">
+            <img src="/multimedia/bring-me-the-horizon-2021-696x479.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">BRING ME THE HORIZON</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Saber más...</a>
+            </div>
+          </div>
+          <div class="card d-none d-md-block">
+            <img src="/multimedia/Joyeux-40e-anniversaire-deadmau5-celebrez-avec-5-de-ses-titres.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">DEAD MAUS</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Saber más...</a>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="carousel-item">
+          <div class="cards-wrapper">
+            <div class="card">
+              <img src="/multimedia/277781235-320650273385220-8321478473860314554-n_39744491_20220401152330.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">RED HOT CHILI PEPPERS</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Saber más...</a>
+              </div>
+            </div>
+            <div class="card d-none d-md-block">
+              <img src="/multimedia/foto_de_john-mayer-1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">JOHN MAYER</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Saber más...</a>
+              </div>
+            </div>
+            <div class="card d-none d-md-block">
+              <img src="/multimedia/T7IQHJFVTVFTFJYOTEOGPC7NFE.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">CHAVO OF THE 8 </h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a asp-area="" asp-controller="Home" asp-action="Entradas" class="btn btn-primary">Saber más...</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    
+    <section class="about-area">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-6 col-md-12">
+              <div class="about-image">
+<<<<<<< Updated upstream
+                  <img src="/multimedia/ra.jpg" alt="RAUW ALEJANDRO" class="img-fluid" width="300" height="300">
+=======
+                  <img src="/multimedia/concierto.png" alt="RAMMSTEIN" class="img-fluid">
+>>>>>>> Stashed changes
+                  <br>
+                  <h3>RAUW ALEJANDRO</h3>
+                  <br>
+                  <p>Rauw Alejandro es un cantante, compositor, bailarín y productor puertorriqueño. Pertenece a «la nueva generación» de músicos urbanos puertorriqueños. Ha ganado un Premio Grammy Latino de cuatro nominaciones. Su álbum de estudio debut es Afrodisíaco, su segundo álbum de estudio, Vice Versa, lanzado en junio de 2021, contó con el sencillo principal «Todo de ti»
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

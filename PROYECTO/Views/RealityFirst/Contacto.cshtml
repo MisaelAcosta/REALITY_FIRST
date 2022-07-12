@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Contacto"] = "Privacy Policy";
+}
+<h1>@ViewData["Contacto"]</h1>
+<div class="containercontacto">
+		<div class="contact-box">
+			<div class="left">
+				<img src="/multimedia/contacto.jpg" width="690" height="580" class="card-img-overlay" />
+			</div>
+			<div class="right">
+				<h2>CONTACTANOS</h2>
+				<input type="text" class="field" placeholder="Nombre y Apellido">
+				<input type="text" class="field" placeholder="Correo Electronico">
+				<input type="text" class="field" placeholder="Telefono">
+				<textarea placeholder="Escriba su mensaje..." class="field"></textarea>
+				<button class="btn1">Send</button>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function toggleMenu(){
+    var menutoggle = document.querySelector('.toggle');
+    var navigation = document.querySelector('.navigation')
+    menutoggle.classList.toggle('active')
+    navigation.classList.toggle('active')
+  }
+	</script>

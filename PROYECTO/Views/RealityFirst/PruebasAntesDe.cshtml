@@ -1,0 +1,27 @@
+﻿@model IList<Artista>
+@{
+}
+
+@foreach (Artista Artista in Model)
+{
+    <div class="col-4">
+        <div class="card" style="width: 18rem;">
+           
+            <div class="card-body">
+                <h5 class="card-title">@Artista.Nombre</h5>
+                <p class="card-text">
+                    <ul>
+                        <li>
+                            edad: @Artista.Edad
+                        </li>
+                        <li>
+                            genero: @Artista.Genero
+                        </li>
+                       
+                    </ul>
+                </p>
+                
+            </div>
+        </div>
+    </div>
+}
